@@ -1,4 +1,4 @@
-import {StyleCard, Lele, Lelo} from '../styles/styleCards'
+import {StyleCard, CardPokebola, cardPokemon} from '../styles/styleCards'
 import Pokebola from '../images/pokebola.svg'
 
 const ItemCard = ({pokemon, index, handleClick}) => {
@@ -7,14 +7,14 @@ const ItemCard = ({pokemon, index, handleClick}) => {
         <>
             <StyleCard  onClick={()=>handleClick(pokemon,index)}>
                 { pokemon.show?
-                    <Lelo>
+                    <cardPokemon>
                         <h2>{pokemon.name}</h2>
                         <img src={pokemon.imagen} alt={pokemon.name}/>
-                    </Lelo>
+                    </cardPokemon>
                     :
-                    <Lele>
+                    <CardPokebola>
                         <img src={Pokebola} alt={Pokebola}/>
-                    </Lele>
+                    </CardPokebola>
                 }                           
             </StyleCard>
             

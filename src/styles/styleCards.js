@@ -35,13 +35,13 @@ const Flip = keyframes`
     100% {opacity: 1;}
 `
 
-const Lele = styled.div`
+const CardPokebola = styled.div`
     animation-name: ${Flip};
     animation-duration: 3s;
     animation-fill-mode: both;
  
 `
-const Lelo = styled.div`
+const cardPokemon = styled.div`
     animation-name: ${Flip};
     animation-duration: 2s;
     animation-fill-mode: both;
@@ -72,4 +72,4 @@ const StyleCard = styled.div`
 
 
 
-export {StyleCard, BoxCards, Header, Button, Form, Lele, Lelo}
+export {StyleCard, BoxCards, Header, Button, Form, CardPokebola, cardPokemon}

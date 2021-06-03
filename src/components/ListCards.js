@@ -11,7 +11,6 @@ const ListCards = () => {
     const [openCards, setOpenCards] = useState([])
 
     useEffect(()=>{
-
         getPokemons(random)
         .then((poke) =>{
             const newArrPokes = [...poke, ...poke]
@@ -23,10 +22,8 @@ const ListCards = () => {
     }, [random])
 
     useEffect(() => {
-
         let countCards = openCards.length
-        if(countCards === 2){
-           
+        if(countCards === 2){          
             let first= openCards[0]
             let second= openCards[1]
 
@@ -37,7 +34,6 @@ const ListCards = () => {
                     setTimeout(()=>{
                        setPokemons(pokemonSelected)
                     }, 1000)
-
                 }else{
                     const pokemonSelected = pokemons.map((el, i)=>{
                         return (first.index === i || second.index === i)? {...el, disabled:true}:{...el}
@@ -45,10 +41,8 @@ const ListCards = () => {
                     setPokemons(pokemonSelected)
                 }
                 setOpenCards([])
-
         }
-
-        console.log(openCards, 'openCards')
+        // console.log(openCards, 'openCards')
     }, [openCards, pokemons ])
 
     const handleSubmit = (e) =>{
