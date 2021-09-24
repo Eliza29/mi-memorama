@@ -75,7 +75,7 @@ const ListCards = () => {
                     ))
                 }
             </BoxCards>
-           <Button> Resetear </Button>
+            <Button> Resetear </Button>
         </Form>
     );
 }

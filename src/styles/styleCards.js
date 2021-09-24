@@ -7,10 +7,17 @@ const Header = styled.header`
     text-shadow: 2px 2px #c1c1c1;
 `
 const BoxCards = styled.div`
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and (min-width: 769px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
 `
 const Button = styled.button`
     align-self: center;
@@ -25,7 +32,6 @@ const Button = styled.button`
     margin: 1rem 0;
     width: 200px;
 `
-
 const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -34,20 +40,20 @@ const Flip = keyframes`
     0% {opacity: 0;}
     100% {opacity: 1;}
 `
-
-const CardPokebola = styled.div`
-    animation-name: ${Flip};
-    animation-duration: 3s;
-    animation-fill-mode: both;
- 
-`
-const cardPokemon = styled.div`
+const Animation = styled.div`
     animation-name: ${Flip};
     animation-duration: 2s;
     animation-fill-mode: both;
- 
 `
-const StyleCard = styled.div`
+
+const CardPokebola = styled(Animation)`
+    animation-duration: 3s; 
+`
+const CardPokemon = styled(Animation)`
+    animation-duration: 2s;
+`
+
+const StyleCard = styled(Animation)`
     background: #e8f5ff;
     border-radius: 7px;
     cursor:pointer;
@@ -55,14 +61,10 @@ const StyleCard = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin: 0.5rem;
     height: 200px;
-    width: 200px;
+    /* width: 200px; */
+    animation-duration: 3s; 
 
-    animation-name: ${Flip};
-    animation-duration: 2s;
-    animation-fill-mode: both;
-    
     img{
         max-width: 100px;
         height: 140px;
@@ -70,6 +72,4 @@ const StyleCard = styled.div`
     }
 `
 
-
-
-export {StyleCard, BoxCards, Header, Button, Form, CardPokebola, cardPokemon}
+export {StyleCard, BoxCards, Header, Button, Form, CardPokebola, CardPokemon}
